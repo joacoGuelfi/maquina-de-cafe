@@ -85,7 +85,7 @@ do {
         }
     } while (pago)
 
-    alert("Cafe listo! Retire el vaso con cuidado.")
+    alert(`Cafe listo! \nAqui tiene su Cafe ${tipo} ${tamanio}. \nRetire el vaso con cuidado.`)
 
 
     do {
