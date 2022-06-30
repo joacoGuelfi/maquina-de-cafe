@@ -5,9 +5,29 @@ let valTam, valCafe
 let precio = 0
 let ingreso, vuelto
 let respuesta, otro, valOtro
-// Tamaño de cafe
+let dia, mes, anio, cumple
+
+
+
+function calcular(dia, mes, anio) {
+
+    anio = 2022 - anio
+    if (mes > 6) {
+        anio = anio - 1
+    } else if (mes < 6){
+        anio = anio -2
+    }else if (mes === 6 && dia === 29) {
+        anio = anio
+        return `Feliz cumpleaños N°${anio}!!!!!`
+    }
+
+    return `Usted tiene ${anio} años.`
+
+}
+
 do {
     do {
+        // Tamaño de cafe
         numero = parseFloat(prompt("Por favor ingrese el numero del tamaño del vaso que desea: \n1. Grande \n2. Mediano \n3. Chico"))
 
         switch (numero) {
@@ -84,6 +104,17 @@ do {
             pago = false
         }
     } while (pago)
+
+    alert("Mientras espera el cafe. Porque no jugamos a un juego ?. \nUsted me dice la fecha de su nacimiento y yo adivino su edad.")
+    do {
+        dia = parseInt(prompt("Por favor. Ingrese el dia en el que nacio."))
+        mes = parseInt(prompt("Por favor. Ingrese el mes en el que nacio."))
+        anio = parseInt(prompt("Por favor. Ingrese el año en el que nacio."))
+    } while (isNaN(dia) || isNaN(mes) || isNaN(anio))
+
+   alert (calcular (dia,mes,anio))
+
+
 
     alert(`Cafe listo! \nAqui tiene su Cafe ${tipo} ${tamanio}. \nRetire el vaso con cuidado.`)
 
